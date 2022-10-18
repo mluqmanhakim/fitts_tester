@@ -15,8 +15,6 @@ use App\Http\Controllers\ExperimentController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ExperimentController::class, 'index'])->name('home');
 
 Route::get('/experiment', [ExperimentController::class, 'index'])->name('exp_index');
