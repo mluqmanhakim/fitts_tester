@@ -15,6 +15,5 @@ use App\Http\Controllers\ExperimentController;
 |
 */
 
-Route::get('/', [ExperimentController::class, 'index'])->name('home');
-
-Route::get('/experiment', [ExperimentController::class, 'index'])->name('exp_index');
+Route::get('/experiment', [ExperimentController::class, 'index'])->name('show_exp');
+Route::post('/experiment', [ExperimentController::class, 'store'])->name('submit_log');
