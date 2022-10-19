@@ -20,7 +20,8 @@ class ExperimentController extends Controller
             "box_height" => $request->box_h,
             "x_distance" => $request->x_distance,
             "y_distance" => $request->y_distance,
-            "time" => $request->time
+            "time" => $request->time,
+            "is_distracted" => $request->is_distracted
         ]);
         return redirect()->route('show_exp');
     }

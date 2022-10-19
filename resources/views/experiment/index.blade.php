@@ -6,9 +6,6 @@
 
 @section('content')
 <style>
-body {
-  background-color: lightgreen;
-}
 #box1 {
     background-color: #000000;
     color: #FFFFFF;
@@ -18,7 +15,6 @@ body {
     width: 90px;
     height: 90px;
 }
-/* max 1400px and 700px */
 #box2 {
     background-color: #000000;
     color: #FFFFFF;
@@ -37,7 +33,8 @@ body {
     <input id="box_h" name="box_h" type="number">
     <input id="x_distance" name="x_distance" type="number">
     <input id="y_distance" name="y_distance" type="number">
-    <input id="time" name="time" type="number">        
+    <input id="time" name="time" type="number"> 
+    <input id="is_distracted" name="is_distracted" type="number">               
 </form>
 
 @endsection
@@ -47,6 +44,7 @@ body {
 <script>
 document.getElementById("box2").style.visibility = "hidden";
 
+var is_distracted = Math.round(Math.random());
 var start_time;
 var time;
 let top_ = randomNumber(120, 600);
@@ -55,12 +53,14 @@ let width = randomNumber(60, 200);
 let height = randomNumber(60, 200);
 let x_distance = left_ - 100
 let y_distance = top_ - 100
+console.log(is_distracted)
 
 // Set form input values
 document.getElementById("box_w").value = width;
 document.getElementById("box_h").value = height;
 document.getElementById("x_distance").value = x_distance;
 document.getElementById("y_distance").value = y_distance;
+document.getElementById("is_distracted").value = is_distracted;
 
 // Set box2
 document.getElementById("box2").style.top = top_ + "px";
@@ -71,6 +71,10 @@ document.getElementById("box2").style.height = height + "px";
 function box1_click() {
     start_time = Date.now()
     document.getElementById("box2").style.visibility = "visible";
+    if (is_distracted == 1) {
+        window.setInterval(change_bg, 200);
+    }
+    
 }
 
 function randomNumber(min, max) { 
@@ -83,5 +87,15 @@ function box2_click() {
     document.getElementById("log_form").submit();
     alert("Good job!");
 }
+
+function change_bg() {
+    let colors = ['green', 'blue', 'yellow', 'red', 'orange', 'grey', 'violet'];
+    let color_idx = randomNumber(0, colors.length);
+    document.body.style.backgroundColor = colors[color_idx]; 
+}
+
+
+
+
 </script>
 @endsection
