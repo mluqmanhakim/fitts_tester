@@ -21,6 +21,7 @@ return new class extends Migration
             $table->double('y_distance')->nullable();
             $table->double('time')->nullable();
             $table->integer('is_distracted')->nullable();
+            $table->integer('distract_type')->nullable();
             $table->timestamps();
         });
     }

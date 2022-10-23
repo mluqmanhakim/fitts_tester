@@ -34,7 +34,8 @@
     <input id="x_distance" name="x_distance" type="number">
     <input id="y_distance" name="y_distance" type="number">
     <input id="time" name="time" type="number"> 
-    <input id="is_distracted" name="is_distracted" type="number">               
+    <input id="is_distracted" name="is_distracted" type="number"> 
+    <input id="distract_type" name="distract_type" type="number" value=1>                                          
 </form>
 
 @endsection
@@ -85,7 +86,6 @@ function box2_click() {
     time = (Date.now() - start_time) / 1000;
     document.getElementById("time").value = time;
     document.getElementById("log_form").submit();
-    alert("Good job!");
 }
 
 function change_bg() {

@@ -8,9 +8,9 @@ use App\Models\Log;
 
 class ExperimentController extends Controller
 {
-    public function index()
+    public function show_exp_1()
     {
-        return view('experiment.index');
+        return view('experiment.exp_1');
     }
 
     public function store(Request $request)
@@ -21,9 +21,19 @@ class ExperimentController extends Controller
             "x_distance" => $request->x_distance,
             "y_distance" => $request->y_distance,
             "time" => $request->time,
-            "is_distracted" => $request->is_distracted
+            "is_distracted" => $request->is_distracted,
+            "distract_type" => $request->distract_type
         ]);
-        return redirect()->route('show_exp');
+        
+        if ($request->distract_type == 1) {
+            return redirect()->route('show_exp_1');    
+        }
+        return redirect()->route('show_exp_2');
+    }
+
+    public function show_exp_2()
+    {
+        return view('experiment.exp_2');
     }
 
 }
