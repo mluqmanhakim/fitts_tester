@@ -28,12 +28,20 @@ class ExperimentController extends Controller
         if ($request->distract_type == 1) {
             return redirect()->route('show_exp_1');    
         }
-        return redirect()->route('show_exp_2');
+        if ($request->distract_type == 2) {
+            return redirect()->route('show_exp_2');    
+        }
+        return redirect()->route('show_exp_3');
     }
 
     public function show_exp_2()
     {
         return view('experiment.exp_2');
+    }
+
+    public function show_exp_3()
+    {
+        return view('experiment.exp_3');
     }
 
 }

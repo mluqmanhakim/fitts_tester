@@ -20,3 +20,5 @@ Route::get('/exp-1', [ExperimentController::class, 'show_exp_1'])->name('show_ex
 Route::post('/experiment', [ExperimentController::class, 'store'])->name('submit_log');
 
 Route::get('/exp-2', [ExperimentController::class, 'show_exp_2'])->name('show_exp_2');
+
+Route::get('/exp-3', [ExperimentController::class, 'show_exp_3'])->name('show_exp_3');
