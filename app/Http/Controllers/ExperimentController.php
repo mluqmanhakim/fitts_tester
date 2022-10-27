@@ -15,16 +15,22 @@ class ExperimentController extends Controller
 
     public function store(Request $request)
     {
+        $misclick = 0;
+        if ($request->misclick == 1) {
+            $misclick = 1;
+        }
+        
         $log = Log::create([
             "box_width" => $request->box_w,
             "box_height" => $request->box_h,
             "x_distance" => $request->x_distance,
             "y_distance" => $request->y_distance,
             "time" => $request->time,
-            "is_distracted" => $request->is_distracted,
-            "distract_type" => $request->distract_type
+            "distracted" => $request->distracted,
+            "distract_type" => $request->distract_type,
+            "misclick" => $misclick
         ]);
-        
+
         if ($request->distract_type == 1) {
             return redirect()->route('show_exp_1');    
         }
