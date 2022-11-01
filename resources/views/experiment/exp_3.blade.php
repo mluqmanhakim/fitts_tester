@@ -19,8 +19,6 @@
     background-color: #000000;
     color: #FFFFFF;
     position: fixed;
-    display: block;
-    border-radius: 50%;
 }
 </style>
 
@@ -36,8 +34,9 @@
     <input id="x_distance" name="x_distance" type="number">
     <input id="y_distance" name="y_distance" type="number">
     <input id="time" name="time" type="number"> 
-    <input id="is_distracted" name="is_distracted" type="number"> 
-    <input id="distract_type" name="distract_type" type="number" value=3>                                          
+    <input id="distracted" name="distracted" type="number"> 
+    <input id="distract_type" name="distract_type" type="number" value=3>
+    <input id="misclick" name="misclick" type="number">    
 </form>
 
 @endsection
@@ -47,23 +46,24 @@
 <script>
 document.getElementById("box2").style.visibility = "hidden";
 
-var is_distracted = Math.round(Math.random());
+var distracted = Math.round(Math.random());
 var start_time;
 var time;
 let top_ = randomNumber(120, 600);
 let left_ = randomNumber(120, 1200);
 let width = randomNumber(60, 200);
 let height = randomNumber(60, 200);
-let x_distance = left_ - 100
-let y_distance = top_ - 100
-console.log(is_distracted)
+let x_distance = left_ - 100;
+let y_distance = top_ - 100;
+var click_record = false;
+
 
 // Set form input values
 document.getElementById("box_w").value = width;
 document.getElementById("box_h").value = height;
 document.getElementById("x_distance").value = x_distance;
 document.getElementById("y_distance").value = y_distance;
-document.getElementById("is_distracted").value = is_distracted;
+document.getElementById("distracted").value = distracted;
 
 // Set box2
 document.getElementById("box2").style.top = top_ + "px";
@@ -72,11 +72,14 @@ document.getElementById("box2").style.width = width + "px";
 document.getElementById("box2").style.height = height + "px";
 
 function box1_click() {
+    click_record = true;
     start_time = Date.now()
     document.getElementById("box2").style.visibility = "visible";
-    if (is_distracted == 1) {
-        window.setInterval(change_bg, 200);
+    if (distracted == 1) {
+        document.getElementById("box2").style.display =  "block";
+        document.getElementById("box2").style.borderRadius =  "50%";
     }
+    setInterval(record_misclick, 500);
     
 }
 
@@ -90,14 +93,16 @@ function box2_click() {
     document.getElementById("log_form").submit();
 }
 
-function change_bg() {
-    let colors = ['green', 'blue', 'yellow', 'red', 'orange', 'grey', 'violet'];
-    let color_idx = randomNumber(0, colors.length);
-    document.body.style.backgroundColor = colors[color_idx]; 
+function record_misclick() {
+    window.onclick = e => {
+        if (click_record == true) {
+            if (e.target.id != "box2") {
+                document.getElementById("misclick").value = 1;
+            }
+            click_record = false;
+        }
+    }
 }
-
-
-
 
 </script>
 @endsection

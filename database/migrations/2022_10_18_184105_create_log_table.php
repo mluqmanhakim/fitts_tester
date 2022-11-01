@@ -20,8 +20,9 @@ return new class extends Migration
             $table->double('x_distance')->nullable();
             $table->double('y_distance')->nullable();
             $table->double('time')->nullable();
-            $table->integer('is_distracted')->nullable();
+            $table->integer('distracted')->nullable();
             $table->integer('distract_type')->nullable();
+            $table->integer('misclick')->nullable();
             $table->timestamps();
         });
     }
