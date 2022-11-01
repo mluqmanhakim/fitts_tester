@@ -44,4 +44,10 @@ class ExperimentController extends Controller
         return view('experiment.exp_3');
     }
 
+    //mockup base
+    public function start()
+    {
+        return view('experiment.start');
+    }
+
 }
