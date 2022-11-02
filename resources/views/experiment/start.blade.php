@@ -57,6 +57,6 @@
   function start(){
     var nickname = document.getElementById("nickname").value;
     localStorage.setItem("nickname", nickname);
-    localStorage.setItem("savetime", new Date().getTime());
+    //localStorage.setItem("savetime", new Date().getTime());
   }
 </script>

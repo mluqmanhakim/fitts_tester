@@ -1,4 +1,5 @@
 @extends('layout.base')
+@extends('experiment.timer')
 
 @section('extra_style')
 <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
@@ -52,6 +53,9 @@
     <input id="misclick" name="misclick" type="number">                            
 </form>
 
+<p id="nickname" hidden></p>
+<p id="savetime" hidden></p>
+<p id="currenttime" hidden></p>
 @endsection
 
 @section('extra_script')
@@ -123,6 +127,10 @@ function record_misclick() {
     }
 }
 
+    //debugging purpose
+    document.getElementById("nickname").innerHTML = localStorage.getItem("nickname");
+    document.getElementById("savetime").innerHTML = localStorage.getItem("savetime");
+    document.getElementById("currenttime").innerHTML = currentTime;
 
 </script>
 @endsection
