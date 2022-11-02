@@ -1,14 +1,23 @@
 <script>
-    function redirect () { 
-        setTimeout("go_now()",3000); }
+    //function redirect () { 
+    //    setTimeout("go_now()",3000); }
+
+    function check(){
+        document.getElementById("nickname").innerHTML = localStorage.getItem("nickname");
+        document.getElementById("savetime").innerHTML = parseInt(localStorage.getItem("savetime")) + 3000;
+        var anyTime = parseInt(localStorage.getItem("savetime")) + 3000; //set timer here
+        var currentTime = new Date().getTime();
+        if (currentTime > anyTime){
+                return go_now();
+        }
+    }
     function go_now ()   { 
-        window.location.href = "{{ route('show_exp_1') }}"; }
+        window.location.href = "{{ route('menu') }}"; 
+    }
+    
 </script>
     
-<body onLoad="redirect()">
+<body onLoad="check()">
     
-    <P>Mockup for timer. This page will automatically redirect to exp2 in 3 seconds without warning. Place the content here.
-    <P>exp1 here
-
 </body>
 

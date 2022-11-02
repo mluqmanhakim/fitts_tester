@@ -55,5 +55,12 @@ class ExperimentController extends Controller
     {
         return view('experiment.start');
     }
-
+    public function timer()
+    {
+        return view('experiment.timer');
+    }
+    public function menu()
+    {
+        return view('experiment.menu');
+    }
 }

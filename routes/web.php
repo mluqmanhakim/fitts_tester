@@ -28,3 +28,5 @@ Route::get('/exp-3', [ExperimentController::class, 'show_exp_3'])->name('show_ex
 Route::get('/timer', [ExperimentController::class, 'timer'])->name('timer');
 
 Route::get('/start', [ExperimentController::class, 'start'])->name('start');
+
+Route::get('/menu', [ExperimentController::class, 'menu'])->name('menu');
