@@ -11,8 +11,7 @@
             <span class="text-primary">Experiment</span>
           </h1>
           <p style="color: hsl(217, 10%, 50.8%)">
-            You are attending Fitt's Law Experiment held by master student of computer science Eotvos Lorand University.
-            Lorem ipsum sit dolor amet. Lorem ipsum sit dolor amet. Lorem ipsum sit dolor amet.
+            You are attending Fitt's Law Experiment held by master students of computer science Eotvos Lorand University.
           </p>
         </div>
         <div class="col-lg-6 mb-5 mb-lg-0">
@@ -22,7 +21,7 @@
 
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example4">Write your nickname here:</label>
+                  <label class="form-label" for="form3Example4">Your nickname:</label>
                   <input type="input" id="nickname" class="form-control" />
                   
                 </div>
@@ -31,7 +30,7 @@
                 <div class="form-outline mb-4">
                   <input class="form-check-input me-2" type="checkbox" value="" id="agreement" checked />
                   <label class="form-check-label" for="form2Example33">
-                    Agreement...
+                    I have read and agree to the Privacy Policy
                   </label>
                 </div>
 

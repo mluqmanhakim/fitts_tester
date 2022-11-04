@@ -21,6 +21,7 @@ class ExperimentController extends Controller
         }
         
         $log = Log::create([
+            "nickname" => $request->nickname,
             "box_width" => $request->box_w,
             "box_height" => $request->box_h,
             "x_distance" => $request->x_distance,

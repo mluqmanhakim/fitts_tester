@@ -9,6 +9,6 @@ class Log extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['box_width', 'box_height', 'x_distance', 'y_distance', 'time', 'distracted', 'distract_type', 'misclick'];
+    protected $fillable = ['nickname','box_width', 'box_height', 'x_distance', 'y_distance', 'time', 'distracted', 'distract_type', 'misclick'];
 
 }

@@ -43,6 +43,7 @@
 
 <form id="log_form" action="{{ route('submit_log') }}" method="POST" hidden>
     @csrf    
+    <input id="nickname" name="nickname" type="text">  
     <input id="box_w" name="box_w" type="number">
     <input id="box_h" name="box_h" type="number">
     <input id="x_distance" name="x_distance" type="number">
@@ -128,7 +129,7 @@ function record_misclick() {
 }
 
     //debugging purpose
-    document.getElementById("nickname").innerHTML = localStorage.getItem("nickname");
+    document.getElementById("nickname").value = localStorage.getItem("nickname");
     document.getElementById("savetime").innerHTML = localStorage.getItem("savetime");
     document.getElementById("currenttime").innerHTML = currentTime;
 

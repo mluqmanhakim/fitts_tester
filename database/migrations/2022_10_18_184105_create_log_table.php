@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
+            $table->string('nickname')->nullable();
             $table->double('box_width')->nullable();
             $table->double('box_height')->nullable();
             $table->double('x_distance')->nullable();
