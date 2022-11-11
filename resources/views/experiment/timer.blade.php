@@ -5,8 +5,8 @@
     var currentTime = parseInt(new Date().getTime());
     function check(){
         document.getElementById("nickname").innerHTML = localStorage.getItem("nickname");
-        document.getElementById("savetime").innerHTML = parseInt(localStorage.getItem("savetime")) + 120000;
-        var anyTime = parseInt(localStorage.getItem("savetime")) + 120000; //set timer here
+        document.getElementById("savetime").innerHTML = parseInt(localStorage.getItem("savetime")) + 90000;
+        var anyTime = parseInt(localStorage.getItem("savetime")) + 90000; //set timer here
         if (currentTime > anyTime){
                 return go_now();
         }
