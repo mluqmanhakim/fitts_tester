@@ -2,7 +2,7 @@
 <div class="container">
     <!-- Content here -->
     <h2>Welcome,</h2><h2 id="nickname"></h2>
-    <h3>Choose the experiment below by clicking the button. For each experiment it will take 90 seconds and will be end automatically.</h3>
+    <h3>Choose the experiment below by clicking the button. For each experiment it will take 120 seconds and will be end automatically.</h3>
     <form action="{{ route('show_exp_1') }}">
         <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="start()">Experiment 1</button>
     </form>
